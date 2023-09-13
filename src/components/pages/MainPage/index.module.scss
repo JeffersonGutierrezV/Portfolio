@@ -1,0 +1,23 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url("landscape-background.jpg");
+  .navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  .stepper {
+    position: fixed;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
