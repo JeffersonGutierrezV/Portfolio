@@ -1,15 +1,9 @@
 import React from "react";
 
 import { Button } from "antd";
+import { CustomButtonProps } from "./index.types";
 
-import styles from "./index.module.css";
-
-interface CustomButtonProps {
-  type?: "normal" | "link" | "icon";
-  label?: string;
-  onClick: () => void;
-  icon?: React.ReactElement;
-}
+import styles from "./index.module.scss";
 
 export const CustomButton: React.FC<CustomButtonProps> = ({
   type = "normal",

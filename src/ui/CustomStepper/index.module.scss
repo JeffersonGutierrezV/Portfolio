@@ -1,0 +1,52 @@
+.step {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+
+  .jumpButton {
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 50%;
+    height: 1.5rem;
+    width: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px) brightness(0.6);
+    transition: transform 0.2s ease-out;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+
+  .auxiliaryLabel {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    position: fixed;
+    bottom: 3rem;
+    left: 50%;
+    transform: translate(-50%);
+    display: inline-block;
+    white-space: nowrap;
+    backdrop-filter: blur(5px) brightness(0.6);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s linear;
+  }
+
+  &:hover {
+    .auxiliaryLabel {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

@@ -1,24 +1,11 @@
-import "./App.css";
-import { Navbar } from "./components/Navbar";
-import { CustomButton } from "./ui/CustomButton";
+import { MainPage } from "./components/pages/MainPage";
 
-import { InstagramOutlined } from "@ant-design/icons";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <CustomButton onClick={() => console.log("test")} label="Test" />
-      <CustomButton
-        onClick={() => console.log("test")}
-        label="Test"
-        type="link"
-      />
-      <CustomButton
-        onClick={() => console.log("test")}
-        icon={<InstagramOutlined />}
-        type="icon"
-      />
+      <MainPage />
     </div>
   );
 }
