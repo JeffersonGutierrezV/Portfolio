@@ -6,4 +6,5 @@ export interface ISection {
 export interface NavbarProps {
   onSectionChange: (section: string) => void;
   sections: ISection[];
+  currentSection: string;
   }
