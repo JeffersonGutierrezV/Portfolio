@@ -3,7 +3,7 @@
 .navbar {
   display: flex;
   box-sizing: border-box;
-  backdrop-filter: blur(5px) brightness(0.6);
+  backdrop-filter: blur(3px) brightness(0.6);
   align-items: center;
   justify-content: space-between;
   border-radius: 1.5rem;
@@ -11,32 +11,79 @@
   height: 3rem;
   padding: 1rem;
   color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
-  .menu {
-    width: 70%;
+  .desktopMenu {
     display: flex;
     justify-content: space-between;
+    width: 60%;
+
+    .item {
+      font-size: 1rem;
+      opacity: 0.8;
+      font-weight: normal;
+      transition: font-weight 0.3s ease, opacity 0.3s ease;
+
+      &:hover {
+        font-weight: bold;
+        cursor: pointer;
+        opacity: 1;
+      }
+
+      &.selected {
+        font-weight: bold;
+        opacity: 1;
+      }
+
+      @media screen and (max-width: map-get($breakpoints, md)) {
+        font-size: 0.875rem;
+      }
+    }
 
     @media screen and (max-width: map-get($breakpoints, sm)) {
       display: none;
     }
+
+    &::-webkit-scrollbar {
+      display: none;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
   }
 
-  .menuIcon {
-    display: flex;
-    width: 60%;
+  .mobileMenu {
+    display: grid;
+    width: 8rem;
     overflow-x: scroll;
+    gap: 1rem;
+    grid-auto-flow: column;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    border-radius: 0.5rem;
+    padding: 0 1rem;
+    box-sizing: border-box;
 
-    * {
-      padding: 0 0.5rem;
-    }
+    .menu {
+      scroll-snap-align: center;
 
-    & :first-child {
-      padding: 0 0.5rem 0 0;
-    }
+      .innerMenu {
+        font-size: 1rem;
+        opacity: 0.8;
+        font-weight: normal;
+        transition: font-weight 0.3s ease, opacity 0.3s ease;
 
-    & :last-child {
-      padding: 0 0 0 0.5rem;
+        &:hover {
+          font-weight: 600;
+          cursor: pointer;
+          opacity: 1;
+        }
+
+        &.selected {
+          font-weight: 600;
+          opacity: 1;
+        }
+      }
     }
 
     @media screen and (min-width: map-get($breakpoints, sm)) {

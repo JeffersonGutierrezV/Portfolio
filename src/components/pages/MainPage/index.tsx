@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DownOutlined, UpOutlined } from "@ant-design/icons";
 
 import CustomSection from "../../CustomSection";
 import { Navbar } from "../../Navbar";
-
-import styles from "./index.module.scss";
 import { CustomStepper } from "../../../ui/CustomStepper";
 import { ISection } from "../../Navbar/index.types";
 
+import styles from "./index.module.scss";
+
 export const MainPage: React.FC = () => {
-  const [currentSection, setCurrentSection] = useState("about");
-  console.log("🚀 ~ file: index.tsx:13 ~ currentSection:", currentSection);
+  const [currentSection, setCurrentSection] = useState<string>("about");
 
   const pageSections: ISection[] = [
     { label: "About", id: "about" },
@@ -18,6 +17,10 @@ export const MainPage: React.FC = () => {
     { label: "Partners", id: "partners" },
     { label: "Contact", id: "contact" },
   ];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const getStepper = () => {
     const currentStepperIndex = pageSections.findIndex(
@@ -34,7 +37,11 @@ export const MainPage: React.FC = () => {
   return (
     <div className={styles.mainContainer}>
       <div className={styles.navbar}>
-        <Navbar onSectionChange={setCurrentSection} sections={pageSections} />
+        <Navbar
+          onSectionChange={setCurrentSection}
+          sections={pageSections}
+          currentSection={currentSection}
+        />
       </div>
       <CustomSection id="about">About</CustomSection>
       <CustomSection id="works">Works</CustomSection>
