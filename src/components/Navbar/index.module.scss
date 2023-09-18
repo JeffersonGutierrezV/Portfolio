@@ -43,12 +43,7 @@
     @media screen and (max-width: map-get($breakpoints, sm)) {
       display: none;
     }
-
-    &::-webkit-scrollbar {
-      display: none;
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
+    @include removeScrollBar;
   }
 
   .mobileMenu {
@@ -89,7 +84,6 @@
     @media screen and (min-width: map-get($breakpoints, sm)) {
       display: none;
     }
-
     @include removeScrollBar;
   }
 }
