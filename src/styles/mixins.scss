@@ -1,0 +1,12 @@
+@mixin removeScrollBar {
+  &::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@mixin backgroundAndShadow {
+  backdrop-filter: blur(3px) brightness(0.6);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}

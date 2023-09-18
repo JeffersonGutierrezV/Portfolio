@@ -1,9 +1,9 @@
 @import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
 .navbar {
   display: flex;
   box-sizing: border-box;
-  backdrop-filter: blur(3px) brightness(0.6);
   align-items: center;
   justify-content: space-between;
   border-radius: 1.5rem;
@@ -11,7 +11,7 @@
   height: 3rem;
   padding: 1rem;
   color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  @include backgroundAndShadow;
 
   .desktopMenu {
     display: flex;
@@ -90,10 +90,6 @@
       display: none;
     }
 
-    &::-webkit-scrollbar {
-      display: none;
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
+    @include removeScrollBar;
   }
 }

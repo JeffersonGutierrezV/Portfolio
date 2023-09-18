@@ -1,6 +1,8 @@
 export interface CustomButtonProps {
-    type?: "normal" | "link" | "icon";
+    type?: "primary" | "link";
     label?: string;
-    onClick: () => void;
+    onClick?: () => void;
     icon?: React.ReactElement;
+    customStyle?: string;
+    href?: string;
 }

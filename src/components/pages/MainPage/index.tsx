@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { DownOutlined, UpOutlined } from "@ant-design/icons";
 
-import CustomSection from "../../CustomSection";
 import { Navbar } from "../../Navbar";
 import { CustomStepper } from "../../../ui/CustomStepper";
 import { ISection } from "../../Navbar/index.types";
 
 import styles from "./index.module.scss";
+import { About } from "../../sections/About";
+import { Contact } from "../../sections/Contact";
+import { CustomSection } from "../../CustomSection";
 
 export const MainPage: React.FC = () => {
   const [currentSection, setCurrentSection] = useState<string>("about");
@@ -43,10 +45,14 @@ export const MainPage: React.FC = () => {
           currentSection={currentSection}
         />
       </div>
-      <CustomSection id="about">About</CustomSection>
+      <CustomSection id="about">
+        <About />
+      </CustomSection>
       <CustomSection id="works">Works</CustomSection>
       <CustomSection id="partners">Partners</CustomSection>
-      <CustomSection id="contact">Contact</CustomSection>
+      <CustomSection id="contact">
+        <Contact />
+      </CustomSection>
       <div className={styles.stepper}>
         <CustomStepper
           step={{

@@ -4,30 +4,34 @@ import { Button } from "antd";
 import { CustomButtonProps } from "./index.types";
 
 import styles from "./index.module.scss";
+import classnames from "classnames";
 
 export const CustomButton: React.FC<CustomButtonProps> = ({
-  type = "normal",
+  type,
   label,
   icon,
   onClick,
+  customStyle,
+  href,
 }) => {
-  const getButton = () => {
-    switch (type) {
-      case "normal":
-        return (
-          <Button onClick={onClick} type="primary">
-            {label}
-          </Button>
-        );
-      case "link":
-        return (
-          <Button onClick={onClick} type="link">
-            {label}
-          </Button>
-        );
-      case "icon":
-        return <Button onClick={onClick} icon={icon} className={styles.icon} />;
-    }
+  const setClassNames = () => {
+    return classnames(styles.customButton, customStyle, {
+      [styles.primary]: type === "primary",
+      [styles.link]: type === "link",
+      [styles.icon]: icon,
+    });
   };
-  return <div className={styles.customButton}>{getButton()}</div>;
+
+  return (
+    <Button
+      onClick={onClick}
+      type={type}
+      icon={icon ? icon : null}
+      className={setClassNames()}
+      target={href && "_blank"}
+      href={href && href}
+    >
+      {label ? label : null}
+    </Button>
+  );
 };

@@ -1,0 +1,120 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.aboutContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  width: 100%;
+  margin: 1rem;
+  gap: 1rem;
+
+  .personalInfo {
+    width: 30%;
+
+    .leftSection {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+
+      .photoSection {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 0.5rem;
+
+        .photo {
+          height: 200px;
+          width: 200px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .socialLinks {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 1rem;
+        }
+
+        @media screen and (max-width: map-get($breakpoints, lg)) {
+          width: 50%;
+        }
+      }
+
+      .infoSection {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        overflow-y: scroll;
+        width: 100%;
+
+        .secondaryCard {
+          display: flex;
+          flex-direction: column;
+          color: #ffffff;
+          background: gray;
+          width: 100%;
+          border-radius: 0.5rem;
+          box-sizing: border-box;
+          padding: 0.5rem;
+          flex-shrink: 0;
+
+          .title {
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+          }
+
+          .content {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+        @media screen and (max-width: map-get($breakpoints, smd)) {
+          overflow-y: visible;
+        }
+
+        @include removeScrollBar;
+      }
+      @media screen and (max-width: map-get($breakpoints, smd)) {
+        flex-direction: column;
+        overflow-y: scroll;
+      }
+      @media screen and (min-width: map-get($breakpoints, smd)) and (max-width: map-get($breakpoints, lg)) {
+        flex-direction: row;
+      }
+
+      @include removeScrollBar;
+    }
+    @media screen and (max-width: map-get($breakpoints, lg)) {
+      width: 100%;
+    }
+    @media screen and (min-width: map-get($breakpoints, lg)) and (max-width: map-get($breakpoints, xlg)) {
+      width: 40%;
+    }
+  }
+  .skillInfo {
+    .asd {
+      overflow-y: scroll;
+      height: 100%;
+    }
+  }
+
+  .iconSection {
+    width: 70%;
+    max-width: 50rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width: map-get($breakpoints, lg)) {
+    flex-direction: column;
+  }
+}

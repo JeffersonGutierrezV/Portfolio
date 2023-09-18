@@ -1,7 +1,23 @@
-.customButton{
-    .icon{
-        border: none;
-        color: white;
-        background: transparent;
+.customButton {
+  &.icon {
+    border: none;
+    display: flex;
+    color: #000000;
+    background: transparent;
+    padding: none !important;
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    width: fit-content;
+
+    &:hover {
+      color: inherit !important;
+      transform: scale(1.1);
     }
+  }
+}
+
+:global(.ant-btn) {
+  padding: 0;
+  border-radius: 0;
 }

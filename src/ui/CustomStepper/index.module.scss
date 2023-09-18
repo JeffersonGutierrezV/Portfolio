@@ -1,3 +1,5 @@
+@import "../../styles/mixins.scss";
+
 .step {
   display: flex;
   justify-content: flex-end;
@@ -13,8 +15,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    backdrop-filter: blur(3px) brightness(0.6);
     transition: transform 0.2s ease-out;
+    @include backgroundAndShadow;
 
     &:hover {
       cursor: pointer;
@@ -37,10 +39,10 @@
     transform: translate(-50%);
     display: inline-block;
     white-space: nowrap;
-    backdrop-filter: blur(3px) brightness(0.6);
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.3s linear;
+    @include backgroundAndShadow;
   }
 
   &:hover {
