@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Link } from "react-scroll";
 
 import { NavbarProps } from "./index.types";
+import { Home } from "../icon";
 
 import styles from "./index.module.scss";
 
@@ -18,7 +19,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <div className={styles.navbar}>
-      <div>logo</div>
+      <Home />
       <div className={styles.desktopMenu}>
         {sections.map(({ label, id }) => (
           <Link

@@ -1,8 +1,22 @@
+@import "../../styles/variables.scss";
+
 .customButton {
+  &.primary {
+    padding: 0 1rem;
+    background: transparent;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    background: $gray-2;
+
+    &:hover {
+      color: transparent;
+      transform: scale(1.1);
+    }
+  }
   &.icon {
     border: none;
     display: flex;
-    color: #000000;
+    color: $gray-1;
     background: transparent;
     padding: none !important;
     display: flex;

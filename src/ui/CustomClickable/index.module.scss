@@ -1,0 +1,14 @@
+a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+
+  & :hover{
+    cursor: pointer;
+  }
+
+}
+
+.container{
+  cursor: pointer;
+}
